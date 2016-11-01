@@ -1,0 +1,142 @@
+a { 
+	color:black;
+	font-weight: bolder;
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover { 
+	color:white;
+}
+a:visited { 
+	text-decoration: none;
+}
+
+body,td { 
+	font-size:14px; 
+	font-family: Verdana,Tahoma;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+.gradBg {
+	font-size: 14px;
+	background: #6699CC; /* fallback */
+	background: -webkit-linear-gradient(#6699CC, #d9d9d9);
+	background: -o-linear-gradient(#6699CC, #d9d9d9);
+	background: -moz-linear-gradient(#6699CC, #d9d9d9);
+	background: linear-gradient(#6699CC, #d9d9d9);
+}
+
+.tsContainer {
+	position: absolute;
+	width: 800px;
+	margin-left: calc(50% - 400px);
+	margin-top: 100px;
+	
+}
+
+.searchHeader {
+	width:100%;
+	height:150px;
+	background-color: gainsboro;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.searchInputs {
+	width:100%;
+	height:100%;
+	text-align: center;
+	padding-top:64px;
+}
+
+#searchField {
+	height: 30px;
+	width: 300px;
+}
+
+.searchButton {
+    background-color: darkcyan;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 30px;
+    box-shadow: 4px 4px 2px grey;
+}
+.searchButton:hover {
+    color:white;
+    cursor: pointer;
+}
+.searchButton:active {
+   box-shadow: 2px 2px 2px grey;
+}
+
+.searchResults {
+	background-color: linen;
+	width:100%;
+	min-height:500px;
+	padding-top: 26px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.resultsList {
+	list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resultsList li{
+	/*margin: 8px;*/
+	padding: 8px;
+    /*margin-left: 80px;*/
+    min-height: 50px;
+}
+
+.totalResults{
+	position: absolute;
+	top: 150px;
+	left: 0px;
+	margin: 4px;
+	cursor: default;
+}
+
+.pageNav{
+	position: absolute;
+	top: 150px;
+	right: 0px;
+	margin: 4px;
+}
+
+.nextBtn{
+	display: inline-block;
+	cursor: pointer;
+}
+.nextBtn:hover{
+	color:white;
+}
+.prevBtn{
+	display: inline-block;
+	cursor: pointer;
+	transform: scale(-1,1);
+	-webkit-transform: scale(-1,1);
+}
+.prevBtn:hover{
+	color:white;
+}
+
+.currentPage{
+	display: inline-block;
+	cursor: default;
+}
+
+.streamThumb{
+	width: 80px;
+    height: 45px;
+    float: left;
+    margin:4px;
+}
+
+.streamName{
+	font-size: 20px;
+}

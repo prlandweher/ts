@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8" /> <!-- For multilanguage and special character support -->
 	<title> Twitch Search API Demo </title>
 	<link rel='stylesheet' type='text/css' href='ts.css'>
 	<script src="ts.js"></script>
@@ -13,8 +13,8 @@
 <div class="tsContainer">
 	<div class="searchHeader">
 		<div class="searchInputs">
-			<input type="text" name="searchQuery" id="searchField" autofocus placeholder="Search query...">
-			<div class="searchButton" onclick="runSearch();">Search</div>
+			<input type="text" name="searchQuery" id="searchField" class="searchField" autofocus placeholder="Search query...">
+			<div class="searchButton" id="searchButton">Search</div>
 		</div>
 	</div>
 	<div id="resultsDiv" class="searchResults">
@@ -22,9 +22,9 @@
 			Total Results: 
 		</div>
 		<div class="pageNav" id="pageNav" style="display:none">
-			<div class="prevBtn" onclick="navPrev();">&#10148;</div>
+			<div class="prevBtn" id="prevBtn">&#10148;</div>
 			<div class="currentPage" id="currentPage">X/Y</div>
-			<div class="nextBtn" onclick="navNext();">&#10148;</div>
+			<div class="nextBtn" id="nextBtn">&#10148;</div>
 		</div>
 		<ul id="resultsList" class="resultsList">
 		</ul>

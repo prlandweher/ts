@@ -71,6 +71,9 @@ var defaultTwitchCallback = function(jsonpValue) {
 	//unhide header items
 	document.getElementById("totalResults").style.display = "block";
 	document.getElementById("pageNav").style.display = "block";
+	//cleanup JSONP from DOM
+	var scriptItem = document.getElementById("scriptsrc");
+	scriptItem.parentNode.removeChild(scriptItem);
 };
 
 /***
@@ -116,7 +119,7 @@ var navNext = function() {
 var runSearch = function() {
 	//get search query
 	var searchField = document.getElementById("searchField").value;
-	//reset globals
+	//reset search globals
 	pageIndex = 0;
 	numPages = 0;
 	currentSearch = searchField;
@@ -124,12 +127,19 @@ var runSearch = function() {
 	runJSONP(searchField);
 };
 
-//bind enter key for search field
-var bindSearchInput = function(){
+/***
+* Bind user interface events
+***/
+var bindUserInput = function(){
+	//bind enter key for search field
 	document.getElementById('searchField').onkeyup = function(event){
 		if(event.keyCode === 13) {
 			runSearch();
 		}
 	};
+	//bind click for navigation buttons
+	document.getElementById('searchButton').onclick = runSearch;
+	document.getElementById('prevBtn').onclick = navPrev;
+	document.getElementById('nextBtn').onclick = navNext;
 };
-window.onload = bindSearchInput;
+window.onload = bindUserInput;

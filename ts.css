@@ -10,7 +10,6 @@ a:hover {
 a:visited { 
 	text-decoration: none;
 }
-
 body,td { 
 	font-size:14px; 
 	font-family: Verdana,Tahoma;
@@ -20,7 +19,6 @@ body,td {
 }
 
 .gradBg {
-	font-size: 14px;
 	background: #6699CC; /* fallback */
 	background: -webkit-linear-gradient(#6699CC, #d9d9d9);
 	background: -o-linear-gradient(#6699CC, #d9d9d9);
@@ -50,23 +48,23 @@ body,td {
 	padding-top:64px;
 }
 
-#searchField {
+.searchField {
 	height: 30px;
 	width: 300px;
 }
 
 .searchButton {
-    background-color: darkcyan;
-    width: 100px;
-    height: 30px;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 30px;
-    box-shadow: 4px 4px 2px grey;
+	background-color: darkcyan;
+	width: 100px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 30px;
+	box-shadow: 4px 4px 2px grey;
 }
 .searchButton:hover {
-    color:white;
-    cursor: pointer;
+	color:white;
+	cursor: pointer;
 }
 .searchButton:active {
    box-shadow: 2px 2px 2px grey;
@@ -75,25 +73,25 @@ body,td {
 .searchResults {
 	background-color: linen;
 	width:100%;
-	min-height:500px;
+	min-height:200px;
 	padding-top: 26px;
 	border-radius: 0px 0px 10px 10px;
 }
 
 .resultsList {
 	list-style-type: none;
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
-.resultsList li{
+.resultsList li {
 	/*margin: 8px;*/
 	padding: 8px;
-    /*margin-left: 80px;*/
-    min-height: 50px;
+	/*margin-left: 80px;*/
+	min-height: 50px;
 }
 
-.totalResults{
+.totalResults {
 	position: absolute;
 	top: 150px;
 	left: 0px;
@@ -101,42 +99,50 @@ body,td {
 	cursor: default;
 }
 
-.pageNav{
+.pageNav {
 	position: absolute;
 	top: 150px;
 	right: 0px;
 	margin: 4px;
 }
 
-.nextBtn{
+.nextBtn {
 	display: inline-block;
 	cursor: pointer;
 }
-.nextBtn:hover{
+.nextBtn:hover {
 	color:white;
 }
-.prevBtn{
+.prevBtn {
 	display: inline-block;
 	cursor: pointer;
 	transform: scale(-1,1);
 	-webkit-transform: scale(-1,1);
 }
-.prevBtn:hover{
+.prevBtn:hover {
 	color:white;
 }
 
-.currentPage{
+.currentPage {
 	display: inline-block;
 	cursor: default;
 }
 
-.streamThumb{
+.streamThumb {
 	width: 80px;
-    height: 45px;
-    float: left;
-    margin:4px;
+	height: 45px;
+	float: left;
+	margin:4px;
 }
 
-.streamName{
+.streamName {
 	font-size: 20px;
+}
+
+.streamStatus {
+	font-weight: normal;
+}
+
+.streamDesc {
+	font-weight: normal;
 }

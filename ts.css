@@ -24,6 +24,8 @@ body,td {
 	background: -o-linear-gradient(#6699CC, #d9d9d9);
 	background: -moz-linear-gradient(#6699CC, #d9d9d9);
 	background: linear-gradient(#6699CC, #d9d9d9);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 .pageTitle {

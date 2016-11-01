@@ -1,8 +1,8 @@
 //// GLOBAL VARS (keep track of user state)
-var pageIndex = 0;
-var pageSize = 10;
-var numPages = 0;
-var currentSearch = "";
+var g_pageIndex = 0;
+var g_pageSize = 10;
+var g_numPages = 0;
+var g_currentSearch = "";
 
 ////JSONP LOGIC (model-ish things)
 
@@ -26,7 +26,7 @@ var getTwitchSearchURL = function(searchString, index, callbackServerVar, callba
 	//Base twitch API url for searching streams with manditory AppId included
 	var baseURL = "https://api.twitch.tv/kraken/search/streams?client_id=5wn12qivo0smx133jw5e108rf4fdlx7";
 	//Append search string and callback portions of the query
-	var queryURI = baseURL + "&q=" + searchString + "&offset=" + index + "&limit=" + pageSize + "&" + callbackServerVar + "=" + callbackClientVar;
+	var queryURI = baseURL + "&q=" + searchString + "&offset=" + index + "&limit=" + g_pageSize + "&" + callbackServerVar + "=" + callbackClientVar;
 	//Return final encoded URL
 	return encodeURI(queryURI);
 };
@@ -60,8 +60,8 @@ var defaultTwitchCallback = function(jsonpValue) {
 	//total results
 	document.getElementById("totalResults").innerHTML = "Total Results: " + jsonpValue._total;
 	//nav buttons
-	numPages = Math.ceil(jsonpValue._total / pageSize);
-	document.getElementById("currentPage").innerHTML = (pageIndex+1) + "/" + numPages;
+	g_numPages = Math.ceil(jsonpValue._total / g_pageSize);
+	document.getElementById("currentPage").innerHTML = (g_pageIndex+1) + "/" + g_numPages;
 	//generate result list
 	var outputStr = "";
 	for(var i = 0; i < jsonpValue.streams.length; i++) {
@@ -97,9 +97,9 @@ var getStreamItem = function(streamObj) {
 * Navigate to the previous page of query results if availible.
 ***/
 var navPrev = function() {
-	if(pageIndex !== 0) {
-		pageIndex--;
-		runJSONP(currentSearch, pageIndex * pageSize);
+	if(g_pageIndex !== 0) {
+		g_pageIndex--;
+		runJSONP(g_currentSearch, g_pageIndex * g_pageSize);
 	}
 };
 
@@ -107,9 +107,9 @@ var navPrev = function() {
 * Navigate to the next page of query results if availible.
 ***/
 var navNext = function() {
-	if(pageIndex+1 < numPages) {
-		pageIndex++;
-		runJSONP(currentSearch, pageIndex * pageSize);
+	if(g_pageIndex+1 < g_numPages) {
+		g_pageIndex++;
+		runJSONP(g_currentSearch, g_pageIndex * g_pageSize);
 	}
 };
 
@@ -120,9 +120,9 @@ var runSearch = function() {
 	//get search query
 	var searchField = document.getElementById("searchField").value;
 	//reset search globals
-	pageIndex = 0;
-	numPages = 0;
-	currentSearch = searchField;
+	g_pageIndex = 0;
+	g_numPages = 0;
+	g_currentSearch = searchField;
 	//search
 	runJSONP(searchField);
 };

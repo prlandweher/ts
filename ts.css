@@ -26,12 +26,20 @@ body,td {
 	background: linear-gradient(#6699CC, #d9d9d9);
 }
 
+.pageTitle {
+	top: 36px;
+	width: 100%;
+	position: absolute;
+	font-size: 24;
+	text-align: center;
+	text-shadow: 2px 2px 3px gray;
+}
+
 .tsContainer {
 	position: absolute;
 	width: 800px;
 	margin-left: calc(50% - 400px);
 	margin-top: 100px;
-	
 }
 
 .searchHeader {
@@ -133,6 +141,7 @@ body,td {
 	height: 45px;
 	float: left;
 	margin:4px;
+	margin-right:10px;
 }
 
 .streamName {
